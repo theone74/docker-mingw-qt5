@@ -3,6 +3,7 @@ FROM haffmans/mingw-qt5
 RUN pacman -S --noconfirm --noprogressbar \
     mingw-w64-qt5-serialport \
     curl \
+    zip \
     && (echo -e "y\ny\n" | pacman -Scc)
     
     
