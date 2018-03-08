@@ -4,6 +4,7 @@ RUN pacman -S --noconfirm --noprogressbar \
     mingw-w64-qt5-serialport \
     curl \
     zip \
+    openssh \
     && (echo -e "y\ny\n" | pacman -Scc)
     
     
