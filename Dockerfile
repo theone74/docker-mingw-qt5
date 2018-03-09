@@ -2,6 +2,7 @@ FROM haffmans/mingw-qt5
 
 RUN pacman -S --noconfirm --noprogressbar \
     mingw-w64-qt5-serialport \
+    mingw-w64-postgresql \
     curl \
     zip \
     openssh \
