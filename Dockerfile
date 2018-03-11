@@ -60,7 +60,6 @@ RUN pacman -S --noconfirm --noprogressbar \
         mingw-w64-libpng \
         mingw-w64-libtiff \
         mingw-w64-libxml2 \
-        mingw-w64-mariadb-connector-c \
         mingw-w64-nsis \
         mingw-w64-openssl \
         mingw-w64-openjpeg \
