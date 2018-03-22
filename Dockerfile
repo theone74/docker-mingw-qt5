@@ -38,6 +38,7 @@ RUN pacman -S --noconfirm --noprogressbar \
         git \
         binutils \
         patch \
+        gcc54 \
     && (echo -e "y\ny\n" | pacman -Scc)
 
 # Install MingW packages
