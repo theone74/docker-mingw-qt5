@@ -10,13 +10,12 @@ MAINTAINER Wouter Haffmans <wouter@simply-life.net>
 
 # Update base system
 RUN    pacman -Sy --noconfirm --noprogressbar archlinux-keyring \
-    && pacman-key --populate \
     && pacman -Su --noconfirm --noprogressbar pacman \
     && pacman-db-upgrade \
     && pacman -Su --noconfirm --noprogressbar ca-certificates \
     && trust extract-compat \
     && pacman -Syyu --noconfirm --noprogressbar \
-    && (echo -e "y\ny\n" | pacman -Scc)
+    && (echo -e "y\ny\n" | pacman -Scc || /bin/true)
 
 # Add martchus.no-ip.biz repo for mingw binaries
 RUN    echo "[ownstuff]" >> /etc/pacman.conf \
@@ -39,7 +38,7 @@ RUN pacman -S --noconfirm --noprogressbar \
         binutils \
         patch \
         base-devel \
-    && (echo -e "y\ny\n" | pacman -Scc)
+    && (echo -e "y\ny\n" | pacman -Scc || /bin/true)
 
 # Install MingW packages
 RUN pacman -S --noconfirm --noprogressbar \
@@ -102,7 +101,7 @@ RUN pacman -S --noconfirm --noprogressbar \
         mingw-w64-qt5-quick1 \
         # Requires qt5-tools
         mingw-w64-qt5-translations \
-    && (echo -e "y\ny\n" | pacman -Scc)
+    && (echo -e "y\ny\n" | pacman -Scc || /bin/true)
 
 ADD Qt5CoreMacros.cmake /usr/i686-w64-mingw32/lib/cmake/Qt5Core/
 ADD Qt5CoreMacros.cmake /usr/x86_64-w64-mingw32/lib/cmake/Qt5Core/
